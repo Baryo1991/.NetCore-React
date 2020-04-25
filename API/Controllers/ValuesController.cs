@@ -23,7 +23,7 @@ namespace DatingApp.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Value>>> Get()
         {
-            var values =  _context.Values.AsQueryable();
+            var values =  await _context.Values.ToListAsync();
             return Ok(values);
         }
 
